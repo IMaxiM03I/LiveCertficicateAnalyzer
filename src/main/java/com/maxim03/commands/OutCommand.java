@@ -11,7 +11,7 @@ public class OutCommand implements Runnable {
 
     @Override
     public void run() {
-        LOG.info(CertStreamConnection.getLatestMsg());
+        LOG.info(CertStreamConnection.getLatestMsg(false));
     }
 
 }
