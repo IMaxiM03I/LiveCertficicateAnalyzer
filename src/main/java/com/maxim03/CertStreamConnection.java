@@ -23,8 +23,13 @@ public class CertStreamConnection {
     }
 
     public static String getLatestMsg() {
+        return getLatestMsg(true);
+    }
+
+    public static String getLatestMsg(boolean removeFromStack) {
         try {
-            return CertStreamConnection.stringCertificates.removeLast();
+            if (removeFromStack) return CertStreamConnection.stringCertificates.removeLast();
+            else return CertStreamConnection.stringCertificates.getLast();
         } catch (NoSuchElementException e) {
             return "";
         }
